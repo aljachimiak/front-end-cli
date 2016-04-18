@@ -16,6 +16,7 @@ main () {
   install_apache2
   configure_apache2
   restart_services
+  install_foundation_cli
 }
 
 print_section () {
@@ -91,6 +92,11 @@ configure_apache2 () {
   sudo a2dissite 000-default || fail "Unable to disable the default site." 
 
   sudo ln -s /vagrant /var/www/html/front-end || fail "Unable to link /vagrant to /var/www/html/front-end" 
+}
+
+install_foundation_cli () {
+  print_section "Installing foundation_cli"
+  sudo npm install -g foundation-cli || fail "Unable to install foundation-cli"
 }
 
 main "$@"

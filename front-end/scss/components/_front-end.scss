@@ -1,0 +1,67 @@
+
+
+/*
+    Main Overrides
+*/
+.off-canvas {
+    background: #fff;
+}
+    
+/*
+    Left Controls
+*/
+$box-shadow-color : rgba(20, 20, 20, .7);
+$li-border-color: #666;
+$link-color: #2199e8;
+#topic-selection{
+    list-style: none;
+    margin-left: 0;
+    li {
+        background-color: #fff;
+        text-align: center;
+        &:last-child{
+            border-bottom: 1px solid $li-border-color;
+        }
+        &:hover{
+            background: $link-color;
+        }         
+        a {
+            display:block;
+            border-top: 1px solid $li-border-color;
+            padding: 1.25em 0;
+            font-size: 1.25em;
+            font-weight: 700;
+            text-transform: uppercase; 
+            &:hover{
+                color: #fff;
+                box-shadow:  inset  0 0 8px 2px $box-shadow-color;
+            }            
+        }
+    }
+}
+
+/*
+    Iframe
+*/
+.callout {
+    height: 23%;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.iframe {
+    border: 1px dotted crimson;
+    height: 85%;
+}
+
+.off-canvas-wrapper, 
+.off-canvas-wrapper-inner, 
+.off-canvas-content,
+.iframe-wrapper {
+    height:100%;
+}
+.iframe-wrapper{
+    padding:7.4%;
+}
+#iframe-container {
+    height:77%;
+}
