@@ -60,13 +60,38 @@ $link-color: #2199e8;
     height:100%;
 }
 .iframe-wrapper{
-    padding:7.4%;
+    padding:3%;
 }
 #iframe-container {
+    position: absolute;
     height:77%;
+    width: calc(100% - 250px);
+    transition: all .5s linear;
+    top: initial;
+    left: initial;
 }
 
 iframe {
     height:100%;
     width:100%;
+}
+
+/*  
+    Enlarge Button
+*/
+#enlarge-btn {
+    background: rgba(250, 250, 250, 0);
+    color:white;
+    position:absolute;
+    padding: .5em;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+#iframe-container.big-container {
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    height: 100vh !important;
+    width: 100vw;
+    top: 0;
+    left: 0;
 }
