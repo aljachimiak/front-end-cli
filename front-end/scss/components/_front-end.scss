@@ -50,7 +50,7 @@ $link-color: #2199e8;
 }
 .iframe {
     border: 1px dotted crimson;
-    height: 85%;
+    height: 100%;
 }
 
 .off-canvas-wrapper, 
@@ -64,4 +64,9 @@ $link-color: #2199e8;
 }
 #iframe-container {
     height:77%;
+}
+
+iframe {
+    height:100%;
+    width:100%;
 }
