@@ -17,6 +17,8 @@ main () {
   configure_apache2
   restart_services
   install_foundation_cli
+  install_gulp
+  install_browserify
 }
 
 print_section () {
@@ -24,6 +26,11 @@ print_section () {
   echo "************************************************************"
   echo "$msg"
   echo "************************************************************"
+}
+
+install_browserify () {
+  print_section "Installing Browserify for React"
+  sudo npm install -g browserify || fail "Could not install browserify"
 }
 
 symlink_node_to_nodejs () {
@@ -37,6 +44,11 @@ install_node () {
   curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - || fail \
     "Unable to run scary nodejs installation script"
   sudo apt-get install nodejs -y || fail "Unable to install Node.js."
+}
+
+install_gulp () {
+  print_section "Installing Gulp"
+  sudo npm install -g gulp || fail "Unable to install gulp"
 }
 
 install_npm () {
