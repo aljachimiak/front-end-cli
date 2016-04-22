@@ -95,12 +95,40 @@ process.umask = function() { return 0; };
 // main.js
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Sections = ['intro', 'git', 'vagrant', 'nodejs', 'sass', 'react', 'conclustion'];
 
-ReactDOM.render(React.createElement(
-  'h1',
-  null,
-  'Hello, world!'
-), document.getElementById('example'));
+var Control = React.createClass({
+  displayName: 'Control',
+
+  render: function () {
+    return React.createElement(
+      'li',
+      { id: this.props.text + "item" },
+      React.createElement(
+        'a',
+        { href: '#', id: this.props.text },
+        this.props.text
+      )
+    );
+  }
+});
+
+var ControlList = React.createClass({
+  displayName: 'ControlList',
+
+  render: function () {
+    var controls = this.props.data.map(function (control) {
+      return React.createElement(Control, { text: control });
+    });
+    return React.createElement(
+      'ul',
+      { id: 'topic-selection' },
+      controls
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(ControlList, { data: Sections }), document.getElementById('ControlList'));
 
 },{"react":166,"react-dom":3}],3:[function(require,module,exports){
 'use strict';

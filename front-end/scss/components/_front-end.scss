@@ -67,8 +67,10 @@ $link-color: #2199e8;
     height:77%;
     width: calc(100% - 250px);
     transition: all .5s linear;
-    top: initial;
-    left: initial;
+    top: auto;
+    left: auto;
+    bottom: initial;
+    right: initial;
 }
 
 iframe {
@@ -92,6 +94,9 @@ iframe {
     position: absolute;
     height: 100vh !important;
     width: 100vw;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    right: 0;
+    .iframe-wrapper {
+        padding: 1%;
+    }
 }
