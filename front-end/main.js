@@ -14,7 +14,7 @@ var Control = React.createClass({
   render: function(){
     return(
         <li className={this.props.selected} id={this.props.text + "_item"}>
-          <a className={this.props.selected} href="#" onClick={this.onclick} id={this.props.text}>{this.props.text}</a>
+          <a className={this.props.selected} href="#" onClick={this.onclick} data-toggle="my-info" id={this.props.text}>{this.props.text}</a>
         </li>
     )
   }

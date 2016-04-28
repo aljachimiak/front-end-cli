@@ -113,7 +113,7 @@ var Control = React.createClass({
       { className: this.props.selected, id: this.props.text + "_item" },
       React.createElement(
         'a',
-        { className: this.props.selected, href: '#', onClick: this.onclick, id: this.props.text },
+        { className: this.props.selected, href: '#', onClick: this.onclick, 'data-toggle': 'my-info', id: this.props.text },
         this.props.text
       )
     );
