@@ -10,9 +10,10 @@ main () {
   install_tools
   clean_up_packages
   install_bash_profile
-  install_node
+  # install_nodejs
   # install_npm
   # symlink_node_to_nodejs
+  install_node
   install_apache2
   configure_apache2
   restart_services
@@ -28,32 +29,9 @@ print_section () {
   echo "************************************************************"
 }
 
-install_browserify () {
-  print_section "Installing Browserify for React"
-  sudo npm install -g browserify || fail "Could not install browserify"
-}
-
-symlink_node_to_nodejs () {
-  print_section "Symlinking node command to nodejs package"
-  sudo ln -s "$(which nodejs)" /usr/bin/node \
-  || fail "Could not symlink to node" 
-}
-
-install_node () {
-  print_section "Installing Node.js"
-  curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - || fail \
-    "Unable to run scary nodejs installation script"
-  sudo apt-get install nodejs -y || fail "Unable to install Node.js."
-}
-
-install_gulp () {
-  print_section "Installing Gulp"
-  sudo npm install -g gulp || fail "Unable to install gulp"
-}
-
-install_npm () {
-  print_section "Installing node package manager [npm]."
-  sudo apt-get install npm -y || fail "Unable to install npm."
+update_package_list () {
+  print_section "Updating package list"
+  sudo apt-get update
 }
 
 install_tools () {
@@ -69,11 +47,6 @@ install_tools () {
     || fail "Unable to install tools."
 }
 
-update_package_list () {
-  print_section "Updating package list"
-  sudo apt-get update
-}
-
 clean_up_packages () {
   print_section "Cleaning up packages"
   (sudo apt-get autoremove -y && sudo apt-get autoclean -y) \
@@ -86,9 +59,31 @@ install_bash_profile () {
   chown vagrant:vagrant /home/vagrant/.bash_profile
 }
 
-restart_services () {
-  print_section "Restart services"
-  sudo service apache2 reload || fail "Could not reload apache2."
+## not used
+install_nodejs () {
+  print_section "Installing nodejs."
+  sudo apt-get install nodejs -y || fail "Unable to install nodejs."
+}
+
+## not used
+install_npm () {
+  print_section "Installing node package manager [npm]."
+  sudo apt-get install npm -y || fail "Unable to install npm."
+}
+
+## not used
+symlink_node_to_nodejs () {
+  print_section "Symlinking node command to nodejs package"
+  sudo ln -s "$(which nodejs)" /usr/bin/node \
+  || fail "Could not symlink to node" 
+}
+
+## here, there be dragons
+install_node () {
+  print_section "Installing Node.js"
+  curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - || fail \
+    "Unable to run scary nodejs installation script"
+  sudo apt-get install nodejs -y || fail "Unable to install Node.js."
 }
 
 install_apache2() {
@@ -106,10 +101,24 @@ configure_apache2 () {
   sudo ln -s /vagrant /var/www/html/front-end || fail "Unable to link /vagrant to /var/www/html/front-end" 
 }
 
+restart_services () {
+  print_section "Restart services"
+  sudo service apache2 reload || fail "Could not reload apache2."
+}
+
 install_foundation_cli () {
   print_section "Installing foundation_cli"
   sudo npm install -g foundation-cli || fail "Unable to install foundation-cli"
 }
 
-main "$@"
+install_gulp () {
+  print_section "Installing Gulp"
+  sudo npm install -g gulp || fail "Unable to install gulp"
+}
 
+install_browserify () {
+  print_section "Installing Browserify for React"
+  sudo npm install -g browserify || fail "Could not install browserify"
+}
+
+main "$@"
