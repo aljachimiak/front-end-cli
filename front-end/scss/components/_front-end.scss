@@ -34,7 +34,7 @@ $link-color: #2199e8;
             display:block;
             border-top: 1px solid $li-border-color;
             padding: calc(14.28vh * .35) 0;
-            font-size: calc(14.28vh * .29);
+            font-size: calc(14.28vh * .295);
             font-weight: 700;
             line-height: 1 !important;
             text-transform: uppercase; 
@@ -112,12 +112,16 @@ iframe, #PresentationFrame {
         padding: 1%;
     }
 }
+.off-canvas.position-left{
+    width: calc(14.28vh * 2.34);
+}
 @media screen and (min-width: 64em){
     .position-left.reveal-for-large ~ .off-canvas-content {
-        margin-left: 255px !important;
+        margin-left: calc(14.28vh * 2.352) !important;
     }
+    
     #iframe-container {
-        width: calc(100% - 250px);
+        width: calc(100% - (14.28vh * 2.34));
         height: 77%;
     }
 }
