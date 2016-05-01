@@ -57,6 +57,17 @@
 				background: rgba(0,0,0,0) !important;
 				
 			}
+			.subtitle {
+				font-family: monospace !important;
+				font-size: .9em !important;
+				margin-top: 40px !important;
+				text-align: center;
+				text-shadow: 2px 2px 0 #000 !important;
+				width: 100%;
+				font-weight: normal !important;
+				padding: 1em .5em !important;
+				background: rgba(200, 200, 200, .2);
+			}
 		</style>
 	</head>
 
@@ -69,7 +80,61 @@
 				</div>
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				
+				<section>
+					<span>gruntfile.js</span>
+					<pre>
+						<code class="js">grunt.initConfig({
+  sass: {
+    dist: {
+      files: [{
+        cwd: 'app/styles',
+        src: '**/*.scss',
+        dest: '../.tmp/styles',
+        expand: true,
+        ext: '.css'
+      }]
+    }
+  },
+  autoprefixer: {
+    options: ['last 1 version'],
+    dist: {
+      files: [{
+        expand: true,
+        cwd: '.tmp/styles',
+        src: '{,*/}*.css',
+        dest: 'dist/styles'
+      }]
+    }
+  },
+  watch: {
+    styles: {
+      files: ['app/styles/{,*/}*.scss'],
+      tasks: ['sass:dist', 'autoprefixer:dist']
+    }
+  }
+});
+grunt.registerTask('default', ['styles', 'watch']);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<span>gulpfile.js</span>
+					<pre>
+						<code class="js">gulp.task('sass', function () {
+  gulp.src('app/styles/**/*.scss')
+    .pipe(sass())
+    .pipe(autoprefixer('last 1 version'))
+    .pipe(gulp.dest('dist/styles'));
+});
+gulp.task('default', function() {
+  gulp.run('sass');
+  gulp.watch('app/styles/**/*.scss', function() {
+    gulp.run('sass');
+  });
+});</code>
+					</pre>
+				</section>
+				<!--demo slides-->
 				<section>
 					<h1>Reveal.js</h1>
 					<h3>The HTML Presentation Framework</h3>

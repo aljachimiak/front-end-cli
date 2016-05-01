@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
+var browserify = require('browserify');
 
 var sassPaths = [
   'bower_components/foundation-sites/scss',
@@ -18,8 +19,25 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('css'));
 });
 
+// var browserify = require("browserify");
+// browserify("./script.js")
+//   .transform("babelify", {presets: ["es2015", "react"]})
+//   .bundle()
+//   .pipe(fs.createWriteStream("bundle.js"));
+ 
+var fs = require('fs'); 
+gulp.task('react', function() {
+  //console.log('reacting');
+  browserify("./main.jsx")
+    .transform("babelify")
+    .bundle()
+    .pipe(fs.createWriteStream('./bundle.js'))
+  
+})
+
 gulp.task('default', ['sass'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
+  gulp.watch(['./**/*.jsx'], ['react']);
 });
 
 

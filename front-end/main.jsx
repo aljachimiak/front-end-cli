@@ -1,4 +1,4 @@
-// main.js
+// main.jsx
 var React = require('react');
 var ReactDOM = require('react-dom');
 var PubSub = require('pubsub-js');
@@ -8,7 +8,7 @@ var Control = React.createClass({
   onclick: function() {
     // when a product is clicked on, we publish a message on the topic 'products' and we pass the product name
     PubSub.publish('presentationChange', this.props.text);
-    console.log("published " + this.props.text);
+    // console.log("published " + this.props.text);
     this.setState({ currentPres: this.props.text});
   },
   render: function(){
@@ -33,7 +33,7 @@ var ControlList = React.createClass({
     var state = this.state  
     var controls = this.props.data.map(function(control, index){
       var currentClass = state.currentPres == control ? "selected" : "";
-      console.log
+      console.log("change 3");
       return(
           <Control key={index} text={control} selected={currentClass}></Control>
       )
@@ -62,7 +62,6 @@ var PresentationFrame = React.createClass({
     PubSub.unsubscribe(this.pubsub_token);
   },
   render: function(){
-    //var presentation = "git-presentation.html";
     return(
       <iframe src={this.state.presentation}></iframe>
     )
