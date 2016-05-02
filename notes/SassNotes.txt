@@ -2,8 +2,8 @@ Sass
     This really isn't about Sass...
 
 What is Sass?
-    Syntactically Awesome StyleSheets
-    an extension of CSS that adds power and elegance to the basic language.
+    Syntactically Awesome StyleSheets..
+    an extension of CSS that adds power and elegance to the basic language
     use variables, nested rules, mixins, inline imports, and more
     
 Easy to start

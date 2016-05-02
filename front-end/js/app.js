@@ -13,4 +13,5 @@ function PresentationSize(me){
     $container.toggleClass('big-container', isSmall);
     
     $(me).blur();
+    $('iframe').focus();
 }
