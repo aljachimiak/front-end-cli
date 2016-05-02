@@ -1,0 +1,146 @@
+// functions
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000000; // Lighter backgorund, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+
+// variables
+$secret-message-color : #def0fc;
+
+// secret message
+.secret-message {
+    @extend .primary;
+    color: $secret-message-color;
+}
+
+/*
+    Main Overrides
+*/
+.off-canvas {
+    background: #fff;
+}
+    
+/*
+    Left Controls
+*/
+$box-shadow-color : rgba(20, 20, 20, .7);
+$li-border-color: #666;
+$link-color: #2199e8;
+#control-column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+#topic-selection{
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+    li {
+        background-color: #fff;
+        text-align: center;
+        &:last-child{
+            border-bottom: 1px solid $li-border-color;
+        }
+        &:hover, &.selected{
+            background: $link-color;
+        }         
+        a {
+            display:block;
+            border-top: 1px solid $li-border-color;
+            padding: calc(14.28vh * .35) 0;
+            font-size: calc(14.28vh * .295);
+            font-weight: 700;
+            line-height: 1 !important;
+            text-transform: uppercase; 
+            &.selected, &:hover{
+                // note a fourth level of nesting is an anti-pattern
+                color: #fff;
+                box-shadow:  inset  0 8px 8px -8px $box-shadow-color,
+                             inset 0 -8px 8px -8px $box-shadow-color;
+            }
+            &:hover{
+                font-style: italic;
+            }          
+        }
+    }
+}
+
+/*
+    Iframe
+*/
+.callout {
+    height: 23%;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.iframe {
+    //border: 1px dotted crimson;
+    height: 100%;
+}
+
+.off-canvas-wrapper, 
+.off-canvas-wrapper-inner, 
+.off-canvas-content,
+.iframe-wrapper {
+    height:100%;
+}
+.iframe-wrapper{
+    padding:3%;
+}
+#iframe-container {
+    position: absolute;
+    height: calc(77% - 42px);
+    width: 100%;
+    transition: all .5s linear;
+    top: auto;
+    left: auto;
+    bottom: initial;
+    right: initial;
+}
+
+iframe, #PresentationFrame {
+    height:100%;
+    width:100%;
+    border-width: 0;
+}
+
+/*  
+    Enlarge Button
+*/
+#enlarge-btn {
+    background: rgba(0, 0, 0, 0);
+    color:white;
+    position:absolute;
+    padding: .5em;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+#iframe-container.big-container {
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    height: 100vh !important;
+    width: 100vw;
+    bottom: 0;
+    right: 0;
+    .iframe-wrapper {
+        padding: .5%;
+    }
+}
+.off-canvas.position-left{
+    width: calc(14.28vh * 2.34);
+}
+@media screen and (min-width: 64em){
+    .position-left.reveal-for-large ~ .off-canvas-content {
+        margin-left: calc(14.28vh * 2.352) !important;
+    }
+    
+    #iframe-container {
+        width: calc(100% - (14.28vh * 2.34));
+        height: 77%;
+    }
+}
+// .off-canvas-content {
+//     margin-left:255px !important;
+// }

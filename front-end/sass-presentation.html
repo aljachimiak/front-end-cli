@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="js/vendor/reveal/css/reveal.css">
+		<link rel="stylesheet" href="js/vendor/reveal/css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="js/vendor/reveal/lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<style>
+			.title {
+				display:flex;
+				justify-content: flex-end;
+				align-items: center; 
+				float:right;
+				padding:.2em !important;
+			}
+			.title img{
+				height: 1.0em;				
+				margin-right: .3em;
+			}
+			.title h3 {
+				margin-bottom: 0;
+				font-size: .6em !important;
+			}
+			[class^=grid] {
+				display:flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 86%;
+			}
+			.grid-2 [class^=col-] {
+				width:48%;
+			}
+			.grid-2 .col-a{
+				margin-right:1.5%;
+			}
+			.no-deco-img {
+				border: 0 solid #000 !important;
+				background: rgba(0,0,0,0) !important;
+				
+			}
+			.subtitle {
+				font-family: monospace !important;
+				font-size: .9em !important;
+				margin-top: 40px !important;
+				text-align: center;
+				text-shadow: 2px 2px 0 #000 !important;
+				width: 100%;
+				font-weight: normal !important;
+				padding: 1em .5em !important;
+				background: rgba(200, 200, 200, .2);
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">	
+			<div class="title">
+					<img style="height:.6em !important;" src="./svg/glasses.svg" alt="">
+					<h3>Sass</h3>
+				</div>
+			<div class="slides">
+				
+				<section>
+					<h2>Sass</h2>
+					<p class="fragment subtitle">This really isn't about Sass...</p>
+				</section>
+				
+				<section>
+					<h2>What is Sass?</h2>
+					<ul>
+						<li class="fragment"><b>S</b>yntactically <b>A</b>wesome <b>S</b>tyle<b>S</b>heets...</li>
+						<li class="fragment">extension of CSS that adds power and elegance to the basic language...</li>
+						<li class="fragment">use variables, nested rules, mixins, inline imports, and more</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Easy to get Started</h2>
+					<div class="fragment">
+						<code>cp your_styles.css your_styles.scss</code>
+						<p>works because Sass is an extension of css</p>
+					</div>
+				</section>
+				
+				<section>
+					<h2>Criticism</h2>
+					<ul>
+						<li class="fragment">Sass needs to be compiled out to a css file...</li>
+						<li class="fragment">Uneccesary complication</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Why use Sass?</h2>
+					<ul>
+						<li class="fragment">Nesting - DRY Styles</li>
+						<li class="fragment"><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend" target="_blank">Extends</a></li>
+						<li class="fragment">Variables</li>
+						<li class="fragment">Functions</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Remember</h2>
+					<p class="subtitle">This really isn't about Sass...</p>
+				</section>
+				
+				<section>
+					<h2>Demo</h2>
+					<ul>
+						<li>Sass Nesting</li>
+						<li>.scss in editor</li>
+						<li>.css in inspector</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Demo</h2>
+					<p>Sass Functions</p>
+				</section>
+				
+				<section>
+					<p class="subtitle">This really isn't about Sass...</p>
+					<h3 class="fragment">This is really about the build process.</h3>
+				</section>
+				
+				<section>
+					<p>Compiling <code>.scss</code> -> <code>.css</code> is one of many different tasks that can be automated.</p>
+					<div class="grid-2 fragment">
+						<div class="col-a">
+							<p>Front-end developers have expanding responsiblities related to maintainability, page size, page performance</p>
+						</div>
+						<div class="col-b">
+							<img class="no-deco-img" src="./presentation-img/forgetful.png" alt="Forgetful Jones">
+						</div>
+					</div>
+				</section>
+				
+				<section>
+					<h1>Warning!</h1>
+					<pre  style="text-align:center;">The next slide is JAM-PACKED with a lot of info. </pre>
+					<pre class="fragment"  style="text-align:center;">Each of these tasks deserves 15 - 45 min.</pre>
+				</section>
+				
+				<section>
+					<h4>Other modern build tasks</h4>
+					<div class="grid-2">
+						<ul>
+							<li class="fragment">create svg sprite sheets</li>
+							<li class="fragment">convert svg -> png</li>
+							<li class="fragment">gulp resize img (picture elem)</li>
+							<li class="fragment">prefix css</li>
+						</ul>
+						<div class="col-b">
+							<ul>
+							<li class="fragment">minify css and js</li>
+							<li class="fragment">concatenate js</li>
+							<li class="fragment">tree shaking</li>
+							<li class="fragment">critical css</li>
+						</ul>
+						</div>
+					</div>
+				</section>
+				
+				<section>
+					<h2>How are builds managed in the front-end workflow?</h2>
+					<ul>
+						<li class="fragment">Task runners</li>
+						<li class="fragment">Grunt</li>
+						<li class="fragment">Gulp</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>What is the difference?</h2>
+					<div class="fragment">
+						<p>
+						<strong>Grunt</strong> - Uses files and I/O operations to build final assets</p>
+					</div>
+					<div class="fragment">						
+						<p><strong>Gulp</strong> - Uses Node Streams to handle inermediary steps before outputing assets</p>
+					</div>
+				</section>
+				
+				<section>
+					<h2>Take a look at two different options.</h2>
+					<ul>
+						<li class="fragment">same tasks...</li>
+						<li class="fragment">handled in grunt and gulp</li>
+						<li class="fragment">found examples here:  <a href="http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/">Jack Hsu</a href=""></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Note:</h2>
+					<p><code>make</code> looks for a <code>makefile</code> to define the precess</p>
+				</section>
+				
+				<section>
+					<span style="font-size:.8em;">gruntfile.js</span>
+					<pre>
+						<code class="js">grunt.initConfig({
+  sass: {
+    dist: {
+      files: [{
+        cwd: 'app/styles',
+        src: '**/*.scss',
+        dest: '../.tmp/styles',
+        expand: true,
+        ext: '.css'
+      }]
+    }
+  },
+  autoprefixer: {
+    options: ['last 1 version'],
+    dist: {
+      files: [{
+        expand: true,
+        cwd: '.tmp/styles',
+        src: '{,*/}*.css',
+        dest: 'dist/styles'
+      }]
+    }
+  },
+  watch: {
+    styles: {
+      files: ['app/styles/{,*/}*.scss'],
+      tasks: ['sass:dist', 'autoprefixer:dist']
+    }
+  }
+});
+grunt.registerTask('default', ['styles', 'watch']);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<span style="font-size:.8em;">gulpfile.js</span>
+					<pre>
+						<code class="js">gulp.task('sass', function () {
+  gulp.src('app/styles/**/*.scss')
+    .pipe(sass())
+    .pipe(autoprefixer('last 1 version'))
+    .pipe(gulp.dest('dist/styles'));
+});
+gulp.task('default', function() {
+  gulp.run('sass');
+  gulp.watch('app/styles/**/*.scss', function() {
+    gulp.run('sass');
+  });
+});</code>
+					</pre>
+				</section>
+				
+				<section>
+					<div class="grid-2">
+						<div class="col-a">
+							<blockquote>"Why are you using gulp instead of grunt?"</blockquote>
+						</div>
+						<div class="col-b" style="width:75%">
+							<img src="./presentation-img/nerd-alert.jpg" alt="">
+						</div>
+					</div>	
+				</section>
+				
+				<section>
+					<div class="grid-2">
+						<div class="col-a">
+							<p>Gulp happens to be newer and is what all the cool kids are using</p>
+						</div>
+						<div class="col-b">
+							<img src="./presentation-img/nice.gif" alt="">
+						</div>
+					</div>	
+				</section>
+				
+				<section>
+					<h2>Demo</h2>
+					<h4>gulpfile.js</h4>
+				</section>
+				
+				<section>
+					<h2>Demo</h2>
+					<p><code>gulp watch</code></p>
+					<img src="./presentation-img/up-arrow.png" alt="">
+				</section>
+				
+				<section>
+					<h2>End Section.</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="js/vendor/reveal/lib/js/head.min.js"></script>
+		<script src="js/vendor/reveal/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'js/vendor/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'js/vendor/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/vendor/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/vendor/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/vendor/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'js/vendor/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

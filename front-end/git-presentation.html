@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="js/vendor/reveal/css/reveal.css">
+		<link rel="stylesheet" href="js/vendor/reveal/css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="js/vendor/reveal/lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<style>
+			.title {
+				display:flex;
+				justify-content: flex-end;
+				align-items: center; 
+				float:right;
+				padding:.2em !important;
+			}
+			.title img{
+				height: 1.0em;				
+				margin-right: .3em;
+			}
+			.title h3 {
+				margin-bottom: 0;
+				font-size: .6em !important;
+			}
+			[class^=grid] {
+				display:flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 86%;
+			}
+			.grid-2 [class^=col-] {
+				width:48%;
+			}
+			.grid-2 .col-a{
+				margin-right:1.5%;
+			}
+			.no-deco-img {
+				border: 0 solid #000 !important;
+				background: rgba(0,0,0,0) !important;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">	
+			<div class="title">
+					<img src="./svg/git-logo.svg" alt="">
+					<h3>Git</h3>
+				</div>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Git</h2>					
+				</section>
+				
+				<section>
+					<h2>What is Git?</h2>
+					<p class="fragment">Git is a version control system.</p>
+				</section>
+				
+				<section>
+					<h3>Why do I need version control?</h3>
+					<p>Human attempts at tracking different versions are valiant...</p>
+					<p>...and destined for failure and frustration.</p>
+					<img class="fragment" src="presentation-img/versions.png" alt="">
+				</section>
+				
+				<section>
+					<h3>Other version control systems</h3>
+					<ul>
+						<li class="fragment">Subversion</li>
+						<li class="fragment">Mercurial</li>
+						<li class="fragment">Team Studio (Microsoft)</li>
+						<li class="fragment">Perforce</li>
+						<li class="fragment">There are many more...</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>What's the difference?</h3>
+					<h4>Branching and Merging</h4>
+					<img class="no-deco-img"  style="background:#efefef !important;" src="presentation-img/branches@2x.png" alt="">
+				</section>
+				
+				<section>
+					<h3>What's the difference?</h3>
+					<h4>Branching and Merging</h4>
+					<ul>
+						<li class="fragment">Context Switching in local branches</li>
+						<li class="fragment">Role-Based Codelines - use branches to organize production code from other day-to-day activities.</li>
+						<li class="fragment">Feature Based Workflow - work on a feature then merge it back into the main line  </li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2><em>Distributed</em> Version Control</h2>
+					
+					<p class="fragment">Allows for geographically separate teams</p>
+					<p class="fragment"> to collaborate at massive scale</p>
+					<p class="fragment">at a quick pace.</p>
+				</section>
+				
+				<section>
+					<h2>Git is Important.</h2>
+				</section>
+				
+				<section>
+					<h1>Demo</h1>
+					<pre>
+						<code>$ git clone https://github.com/aljachimiak/front-end-cli.git</code>
+					</pre>
+				</section>
+				
+				
+				<section>
+					<h2>End Section.</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="js/vendor/reveal/lib/js/head.min.js"></script>
+		<script src="js/vendor/reveal/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'js/vendor/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'js/vendor/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/vendor/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/vendor/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/vendor/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'js/vendor/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

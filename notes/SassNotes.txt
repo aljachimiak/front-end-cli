@@ -1,0 +1,129 @@
+Sass
+    This really isn't about Sass...
+
+What is Sass?
+    Syntactically Awesome StyleSheets..
+    an extension of CSS that adds power and elegance to the basic language
+    use variables, nested rules, mixins, inline imports, and more
+    
+Easy to start
+    cp your_styles.css your_styles.scss
+    work because Sass is an extension of css
+    
+Criticism
+    Sass needs to be compiled out to a css file
+    Uneccesary complication
+    
+Why use Sass?
+    Nesting - DRY Styles
+    Extends - http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend
+    Variables
+    Functions
+    
+Remember
+    This really isn't about Sass...
+    
+Demo 
+    Sass Nesting
+    .scss in editor
+    .css in inspector
+    
+Demo
+    Sass Functions
+    
+This really isn't about Sass...
+    This is really about the build process.
+    
+Compiling .scss -> .css is one of many different tasks that can be automated.
+    Remember img?
+    Expanding responsiblities related to maintainability, page size, page performance
+    
+The next slide is JAM-PACKED with a lot of info.
+    Each of these tasks deserves 15 - 45 min.
+
+Other modern build tasks
+    create svg sprite sheets
+    convert svg -> png
+    gulp resize img (picture elem)
+    prefix css
+    
+    minify css and js
+    concatenate js
+    tree shaking
+    critical css
+
+How are builds managed in the front-end workflow?
+    Task runners
+    Grunt
+    Gulp
+
+What is the difference?
+    Grunt - Uses files and I/O operations to build final assets
+    Gulp - Uses Node Strams to handle inermediary steps before outputting assets
+
+Take a look at two different options.
+    same tasks...
+    handled in grunt and gulp
+    found examples here: http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/ Jack Hsu
+    
+Note:
+    $ make looks for a makefile to define processes
+    
+gruntfile.js
+grunt.initConfig({
+  sass: {
+    dist: {
+      files: [{
+        cwd: 'app/styles',
+        src: '**/*.scss',
+        dest: '../.tmp/styles',
+        expand: true,
+        ext: '.css'
+      }]
+    }
+  },
+  autoprefixer: {
+    options: ['last 1 version'],
+    dist: {
+      files: [{
+        expand: true,
+        cwd: '.tmp/styles',
+        src: '{,*/}*.css',
+        dest: 'dist/styles'
+      }]
+    }
+  },
+  watch: {
+    styles: {
+      files: ['app/styles/{,*/}*.scss'],
+      tasks: ['sass:dist', 'autoprefixer:dist']
+    }
+  }
+});
+grunt.registerTask('default', ['styles', 'watch']);
+
+gulpfile.js
+gulp.task('sass', function () {
+  gulp.src('app/styles/**/*.scss')
+    .pipe(sass())
+    .pipe(autoprefixer('last 1 version'))
+    .pipe(gulp.dest('dist/styles'));
+});
+gulp.task('default', function() {
+  gulp.run('sass');
+  gulp.watch('app/styles/**/*.scss', function() {
+    gulp.run('sass');
+  });
+});
+
+Nerd img    
+    "Why are you using gulp instead of grunt?"
+    
+Gulp happens to be newer and is what all the cool kids are using
+    cool image
+    
+demo    
+    gulp file
+    
+demo 
+    gulp watch

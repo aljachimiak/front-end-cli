@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="js/vendor/reveal/css/reveal.css">
+		<link rel="stylesheet" href="js/vendor/reveal/css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="js/vendor/reveal/lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<style>
+			.title {
+				display:flex;
+				justify-content: flex-end;
+				align-items: center; 
+				float:right;
+				padding:.2em !important;
+			}
+			.title img{
+				height: 1.0em;				
+				margin-right: .3em;
+			}
+			.title h3 {
+				margin-bottom: 0;
+				font-size: .6em !important;
+			}
+			#exp-resp{
+				display:inline;
+				top: 0;
+				left: 0;
+				margin-left: 48px;
+				font-size: .6em !important;
+				padding:.2em !important;
+				text-transform: uppercase;
+			}
+			[class^=grid] {
+				display:flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 86%;
+			}
+			.grid-2 [class^=col-] {
+				width:48%;
+			}
+			.grid-2 .col-a{
+				margin-right:1.5%;
+			}
+			.no-deco-img {
+				border: 0 solid #000 !important;
+				background: rgba(0,0,0,0) !important;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<h3 id="exp-resp" style="display:none;">Expanding responsibilities</h3>	
+			<div class="title">
+					<img src="./svg/flag.svg" alt="">
+					<h3>Intro</h3>
+				</div>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Introduction</h2>
+				</section>
+				
+				<section>											
+					<h2>Hi, I'm Al Jachimiak</h2>
+					<br>
+					<div class="grid-2">
+						<div class="col-a">
+							<img src="https://www.gravatar.com/avatar/35fb129cf9e3876df378036e015c2ff4?d=identicon&amp;s=400" class="gravatar"/>
+							
+						</div>
+						<div class="col-b">
+							<ul>
+								<li class="fragment">Full Stack Developer at <a href="https://castlelearning.com">Castle Learning</a></li>
+								<li class="fragment">Freelance Web Developer</li>
+								<li class="fragment">Semi-Pro Trumpet player</li>
+							</ul>
+						</div>					
+				</section>
+				
+				<section>
+					<style>
+						section dt, section dd {
+							text-align: left !important;
+						}
+						section dd {
+							margin-left: 2em;
+						}
+					</style>
+					<dt>Twitter:</dt>
+					<dd>@aljachimiak</dd>
+					<br>
+					<dt>Visit this talk:</dt>
+					<dd><a href="https://aljachimiak.github.com/front-end-cli/">https://aljachimiak.github.com/front-end-cli/</a></dd>
+					<br>
+					<dt>Code for this talk:</dt>
+					<dd><a href="https://github.com/aljachimiak/front-end-cli/">https://github.com/aljachimiak/front-end-cli/</a></dd>
+				</section>
+				
+				<section data-transition="none">
+					<h2>Preliminary Comment:  </h2>
+					<p class="fragment">* I don't get to use these tools in my day to day.  I'm relegated to using Visual Studio, where many of these things are handled as a IDE plugin.</p>
+				</section>
+				
+				<section data-transition="none">
+					<h2>Preliminary Comment:  </h2>
+					<img src="http://placehold.it/800X600"" alt="">
+				</section>
+				
+				<section data-transition="none">
+					<h2>Preliminary Comment:  </h2>
+					<p class="fragment">* I get to use these technologies on Open Source contributions, FreeLance jobs, and side projects.</p>
+				</section>
+				
+				<section>
+					<h2>What this talk could have been...</h2>
+					<ul>
+						<li class="fragment">A bulleted list of NPM packages</li>
+						<li class="fragment">Demos of those packages</li>
+					</ul>
+					<p class="fragment">This would have only provided a <b>WHAT</b> and <b>HOW</b></p>
+				</section>
+				
+				<section>
+					<h2>Instead...</h2>
+					<p class="fragment">I'll try to give you some context for these tools...</p>
+					<ul>
+						<li class="fragment">Who uses these tools?</li>
+						<li class="fragment">Why do they use them?</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Intended audience:</h2>
+					<ul>
+						<li class="fragment">"I do front-end things, but the command line is intimidating"</li>
+						<li class="fragment">"I don't do front-end things... <span class="fragment"> and why the hell would they need anything other than git and a text editor?"</span></li>
+					</ul>
+				</section>
+				
+				<section>
+					<div class="grid-2">
+						<div class="col-a fragment">
+							<img class="no-deco-img" src="./presentation-img/web-developer.JPG" alt="">
+						</div>
+						<div class="col-b">						
+							<h5>Erm - I already know things</h5>
+							<p class="fragment">Please:</p>
+							<ul>
+								<li class="fragment">Take copious notes...</li>
+								<li class="fragment">...and email me all the wrong things.</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				
+				<section>
+					<h2>Problem:</h2>
+					<p>"Front-end" is a really broad and vague term.</p>
+				</section>
+				
+				<section>
+					<h2>Defining boundries:</h2>
+					<p class="fragment">What does front-end mean?</p>
+					<p class="fragment">On the web, it's the things you see and interact with in a browser window.</p>
+				</section>
+				
+				<section>
+					<h2>Components of the front-end</h2>
+					<img style="background:#efefef;" src="./presentation-img/html5-css3-js.png" alt="">
+				</section>
+				
+				<section>
+					<h2>Demo</h2>
+					<p>A simple web page.</p>
+				</section>
+				
+				<section>
+					<h2>Back in the olden days...</h2>
+					<ul>
+						<li class="fragment">"Hey I need a web page!"</li>
+						<li class="fragment">Handed an Indesign or Photoshop comp</li>
+						<li class="fragment">Open up DreamWeaver or FrontPage and recreate the comp...</li>
+						<li class="fragment">...with some sweet table-based layouts and inline styles</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Still possible today</h2>
+					<div class="fragment">
+						<img src="./presentation-img/macaw.png" alt="">
+						<p>Macaw provides the same flexibility as your favorite image editor but also writes semantic HTML and remarkably succinct CSS.</p>
+					</div>
+				</section>
+				
+				<section>
+					<h2>A likely modern scenario:</h2>
+					<li class="fragment">"Hey I need a web platform!"</li>
+					<li class="fragment">that is fast</li>
+					<li class="fragment">looks great on all devices</li>
+					<li class="fragment">has integrated analytics</li>
+					<li class="fragment">and can be maintained by the marketing team</li>
+				</section>
+				
+				<section>
+					<h2>Content Management System</h2>
+					<ul>
+						<li class="fragment">Drupal</li>
+						<li class="fragment">WordPress</li>
+					</ul>
+					<p class="fragment">Grab a theme and insert your content.</p>
+				</section>
+				
+				<section>
+					<p>Where does a front-end developer fit in in this scenario?</p>
+					<p class="fragment">Creating and/or Customizing the CMS theme</p>
+				</section>
+				
+				<section data-state="exp-resp">
+					<h2>Creating CMS themes</h2>
+					<p class="fragment">Need to know:</p>
+					<ul>
+						<li class="fragment">html, js, and css</li>
+						<li class="fragment">back-end language of the CMS (usually Php)</li>
+					</ul>
+				</section>
+				
+				<section data-state="exp-resp">
+					<h2>Working on a web-app?</h2>
+					<p class="fragment">Each back-end language deals with views differently</p>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>Language</th>
+								<th>Framework</th>
+								<th>Views/Templates</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Ruby</td>
+								<td>Rails</td>
+								<td>Embeded Ruby (html.erb)</td>
+							</tr>
+							<tr>
+								<td>Python</td>
+								<td>Django</td>
+								<td>Jinja2</td>
+							</tr>
+							<tr>
+								<td>Php</td>
+								<td>Laravel</td>
+								<td>Blade</td>
+							</tr>
+							<tr>
+								<td>Node</td>
+								<td>Express</td>
+								<td>HandleBars</td>
+							</tr>
+							<tr>
+								<td>C#</td>
+								<td>MVC</td>
+								<td>.cshtml</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				
+				<section data-state="exp-resp">
+					<h2>The burden of an additional language has been recognized...</h2>
+					<p class="fragment">Drupal and WordPress now offer api's that offer the possibility of having a front-end that is decoupled from the back-end.</p>
+				</section>
+				
+				<section data-state="hide-resp-exp">
+					<h2>The landscape is vast...</h2>
+					<p class="fragment">Let's narrow the scope of front-end for this talk:</p>
+					<ul>
+						<li class="fragment">Only html, css, and js</li>
+						<li class="fragment">producing the assets that go in the <code>&lt;head&gt;</code> and the <code>&lt;body&gt;</code></li>
+						<li class="fragment">tasks that make the web experience faster (ex: minification, concatatenation)</li>
+						<li class="fragment">...and the dev environment needed to produce all this stuff</li>
+					</ul>
+				</section>
+				
+				<section data-state="hide-resp-exp">
+					<h2>How its going to happen...</h2>
+					<img src="./presentation-img/inception.png" alt="">
+				</section>
+				
+				<section>
+					<h3>This talk is actually React JS app...</h3>
+					<p class="fragment">that contains presentations about different front-end command line considerations...</p>
+					<p class="fragment">that will also serve as the demos refered to in the presentations.</p>
+				</section>
+				
+				<section>
+					<h3>If the demo gods smile upon this talk...</h3>
+					<ul>
+						<li class="fragment">pull this app down from github</li>
+						<li class="fragment">bring up the dev environment</li>
+						<li class="fragment">install the dependencies</li>
+						<li class="fragment">and demo from inside that environment</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>End Section.</h2>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="js/vendor/reveal/lib/js/head.min.js"></script>
+		<script src="js/vendor/reveal/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'js/vendor/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'js/vendor/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/vendor/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/vendor/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/vendor/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'js/vendor/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+			
+			Reveal.addEventListener( 'exp-resp', function() {
+				var elem = document.getElementById('exp-resp');
+				console.log(elem)
+				elem.style.display = "inline";
+			} );
+			
+			Reveal.addEventListener( 'hide-resp-exp', function() {
+				var elem = document.getElementById('exp-resp');
+				console.log("hideit")
+				elem.style.display = "none";
+			} );
+
+		</script>
+
+	</body>
+</html>

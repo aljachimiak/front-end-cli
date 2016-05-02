@@ -1,0 +1,60 @@
+React
+
+What is React?
+    Open Source Javascript Library,
+    from the Facebook dev team,
+    for building user dynamic interfaces.
+    
+This isn't Just about React
+    
+Javascript Frameworks
+    Design (Style and Layout)
+    Data Binding (Views)
+    Full App (MVC)
+    
+Design Frameworks
+    Bootstrap - http://getbootstrap.com/
+    Foundation - http://foundation.zurb.com/
+    Material Design: - https://www.google.com/design/spec/material-design/introduction.html#
+        Material UI - http://www.material-ui.com/#/
+        Materialize - http://materializecss.com/
+        MUI - https://www.muicss.com/
+        
+Data Binding
+    Backbone - http://backbonejs.org/
+    Knockout - http://knockoutjs.com/
+    Vuejs - https://vuejs.org/
+    React - https://facebook.github.io/react/index.html
+    
+Full Javascript App 
+    Angular (with Polymer*) - https://angularjs.org/
+    Ember - http://emberjs.com/
+    Meteor - https://www.meteor.com/
+    React and Flux - https://facebook.github.io/flux/
+    
+Need More?
+    ToDo MVC - http://todomvc.com/
+    "...the same Todo application implemented using MV* concepts in most of the popular JavaScript MV* frameworks of today."
+    
+Back to React
+    Used React as an example here...
+        because the cool kids are using it,
+        requires a build step,
+        and has a unique tech perspective.
+        
+What makes React different?
+    "React's one-way data flow (also called one-way binding)",
+    "React abstracts away the DOM from you",
+    and "key design decision is to make the API seem like it re-renders the whole app on every update." - https://facebook.github.io/react/docs/reconciliation.html
+    
+Demo
+    Inpecting the dom vs the html markup
+
+Demo
+    Look at the .jsx
+    
+Demo
+    Look at the produced
+    
+End Section.
+    

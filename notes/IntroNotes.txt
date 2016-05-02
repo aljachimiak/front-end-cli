@@ -1,0 +1,78 @@
+What I do everyday...
+
+What I do on *real* web projects...
+
+What is this talk about?
+
+Who is the audience?
+    "I do front-end things, but the command line is intimidating"
+    "I don't do front-end things, and why the hell would they need anything other than git and a text editor"
+
+Ugh - I already know things...
+
+----
+
+What is does "front-end" mean?
+    Usually the part of a program you interact with
+    On the Web, its the part of the program you see
+    
+Components of Front End
+    Html
+    JS
+    CSS (imgs)
+    
+    
+Demo(link to precooked first html page)
+
+Back in the olden days:
+    Dreamweaver
+    FrontPage
+
+current
+    Maccaw
+
+-> Expanding Front-End Responsibilities
+    
+CMS
+    Wordpress
+    Drupal
+    
+    new hotness: Squarespace
+    
+    Grab a theme and insert your content
+
+Where does a front-end developer fit in for a CMS here?
+  develops the themes.
+  
+That means knowing html, js, css, but also knowing the laguage of your CMS.  Usually PHP (img)
+
+-> If you're a front end developer that works on a web-app, you need to know parts of the language your app is in, and the templating language of that language.
+table
+Python -> Django -> Jinja2
+Ruby -> Rails -> Embedded Ruby 
+PHP -> Laravel -> Blade
+Node -> ExpressJS -> Handlebars
+C# -> MVC -> cshtml
+
+CMS are now offere=ing decoupled templating 
+https://pantheon.io/decoupled-cms
+
+
+-> Because landscape is vast we'll narrow the scope a bit
+    Limit ourselves to Html CSS and Javascript
+    everything in the head.  And how it is retrieved.
+    everything rendered in the body
+
+Even with those limits front-end developers have gained many responsibilities
+    Make it Responsive!
+    Make it Fast!
+    Make it Maintainable!
+    
+
+
+What is this talk about:
+    Boundries - Only html, css, and js.  We'll assume knowledge of the way you can cram together the backend language and the the big three
+    Focus on what a dev actual does to produce code
+    
+
+ 

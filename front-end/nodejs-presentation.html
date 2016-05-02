@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="js/vendor/reveal/css/reveal.css">
+		<link rel="stylesheet" href="js/vendor/reveal/css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="js/vendor/reveal/lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<style>
+			.title {
+				display:flex;
+				justify-content: flex-end;
+				align-items: center; 
+				float:right;
+				padding:.2em !important;
+			}
+			.title img{
+				height: 1.0em;				
+				margin-right: .3em;
+			}
+			.title h3 {
+				margin-bottom: 0;
+				font-size: .6em !important;
+			}
+			[class^=grid] {
+				display:flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+			}
+			.grid-2 [class^=col-] {
+				width:48%;
+			}
+			.grid-2 .col-a{
+				margin-right:1.5%;
+			}
+			.no-deco-img {
+				border: 0 solid #000 !important;
+				background: rgba(0,0,0,0) !important;
+				
+			}
+			.subtitle {
+				font-family: monospace !important;
+				font-size: .9em !important;
+				margin-top: 40px !important;
+				text-align: center;
+				text-shadow: 2px 2px 0 #000 !important;
+				width: 100%;
+				font-weight: normal !important;
+				padding: 1em .5em !important;
+				background: rgba(200, 200, 200, .2);
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">	
+			<div class="title">
+					<img src="./svg/nodejs-icon.svg" alt="">
+					<h3>NodeJs</h3>
+				</div>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>NodeJs</h2>
+					<h5 class="subtitle fragment">We're <em>not really</em> going to talk about NodeJs.</h5>
+				</section>
+				
+				<section>
+					<h2>What is NodeJs?</h2>
+					<p class="fragment">Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
+				</section>
+				
+				<section>
+					<h2>Server Side JavaScript?!?</h2>
+					<ul>
+						<li class="fragment">Make server side applications</li>
+						<li class="fragment">Just like Php, Python, and Ruby etc...</li>
+					</ul>
+				</section>
+				
+				<section>
+					<div class="grid-2">
+						<div class="col-a">
+							<img class="" src="./presentation-img/watwat.png" alt="">
+						</div>
+						<div class="col-b">
+							<img class=" fragment no-deco-img" src="./presentation-img/chan.png" alt="">
+						</div>
+					</div>
+					
+					<h2 class="fragment">Why would I want to run javascript on the server?</h2>
+				</section>
+				
+				<section>
+					<p>Remember:</p>
+					<p class="subtitle">We're <em>not really</em> going to talk about NodeJs.</p>
+				</section>
+				
+				<section>
+					<h2>Why NodeJs?</h2>
+					<ul>
+						<li class="fragment">Open Source</li>
+						<li class="fragment">Cross Platform</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Why NodeJs? <span class="fragment">Performance.</span></h2>
+					<ul>
+						<li class="fragment">NonBlocking I/O</li>
+						<li class="fragment">Asynchronous by nature</li>
+						<li class="fragment">Event Driven</li>
+					</ul>		
+    				<h4 class="fragment">Good for data-intensive real-time applications</h2>
+				</section>
+				
+				<section>
+					<h2>We're Not Really going to talk about nodejs.</h2>
+					<p class="fragment">We're really concerned with how a front-end developer uses nodejs in the developent evironment.</p>
+				</section>
+				
+				<section>
+					<pre>
+					<code>$ sudo npm install npm -g
+						</code>
+					</pre>
+					<div class="fragment">
+						<h2>NPM is the Node Package Manager</h2>
+					</div>
+				</section>
+				
+				<section>
+					<h2>NPM</h2>
+					<ul>
+						<li class="fragment">can be used to install some utilities on a global level</li>
+						<li class="fragment">usually utilities that need to access the file system</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Demo</h2>
+					<p><code style="font-weight:normal !important;">npm install -g</code>&nbsp;&nbsp;while provisioning</p>
+				</section>
+				
+				<section>
+					<pre>
+						<code>$ npm install gulp-sass --save-dev</code>
+					</pre>
+					<ul>
+						<li class="fragment">can be used to install project specific utilities</li>
+						<li class="fragment">package.json</li>
+						<li class="fragment">Usage Pattern: add <code>node-modules</code> to <code>.git-ignore</code></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Demo</h2>
+					<ul>
+						<li>take a look at my package.json file</li>
+						<li><code style="font-weight: normal;">npm install</code></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Honorable mention</h2>
+					<div class="fragment">
+						<h3>Bower</h3>
+						<img src="./presentation-img/bower-logo.svg" alt="">
+					</div>
+					<h4 class="fragment">A package manager for the web. </h4>
+				</section>
+				
+				<section>
+					<h2>Demo</h2>
+					<pre>
+						<code>$  bower install</code>
+					</pre>
+				</section>	
+				
+				<section>
+					<h2>End Section.</h2>
+				</section>			
+
+			</div>
+
+		</div>
+
+		<script src="js/vendor/reveal/lib/js/head.min.js"></script>
+		<script src="js/vendor/reveal/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'js/vendor/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'js/vendor/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/vendor/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/vendor/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/vendor/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'js/vendor/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

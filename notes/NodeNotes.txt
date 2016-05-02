@@ -1,0 +1,42 @@
+NodeJS Notes
+
+NodeJs
+    We're Not Really going to talk about nodejs.
+
+What is NodeJs?
+    Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+    
+Huh?
+    Like running a headless web browser (no fun pictures)
+    Can be used to make server side applications.
+    
+(Jackie Chan Meme) 
+    Why would I want to run javascript on the server?
+    
+Why NodeJs?
+    
+    
+Why NodeJs? Performace.
+    NonBlocking I/O
+    Asynchronous by nature
+    Event Driven
+    
+    Good for data-intensive real-time applications
+    
+We're Not Really going to talk about nodejs.
+    We're really concerned with how a front-end developer uses nodejs in the developent evironment.
+    
+WAT (duck thing)
+
+$ sudo npm install npm -g
+    NPM is Node Package Manager
+    can used to install some utilities on a global level
+    usually utilities that need to access the file system for you
+    
+Demo setup.sh
+    
+$ npm install gulp-sass --save-dev
+   can be used to install project specific utilities 
+   package.json
+   
+Demo npm install 
