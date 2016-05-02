@@ -1,0 +1,42 @@
+Conclusion
+
+My Take aways
+1.) All of the processes I've shown here are pretty well documented with moderate googling.
+2.) Automation will set you free.
+3.) Something to be said about learning, tooling, and adoption.
+
+Well Documented
+    Many developers are using these tools.
+    Building off of a JavaScript interface helps.
+    Many projects are connecting the tools for you.
+    
+Automation Will Set You Free
+    Learning the low level flow of tasks is applicable in other areas
+    Investing the time in automation now, pays dividends in the future
+    
+Intersting Patterns in languages in tooling
+kvm vs vagrant
+
+vmbuilder kvm ubuntu --suite=intrepid --flavour=virtual --arch=amd64 --mirror=http://192.168.0.100:9999/ubuntu -o --libvirt=qemu:///system --tmpfs=- --ip=192.168.0.101 --part=vmbuilder.partition --templates=mytemplates --user=administrator --name=Administrator --pass=howtoforge --addpkg=vim-nox --addpkg=unattended-upgrades --addpkg=acpid --firstboot=boot.sh --mem=256 --hostname=vm1 --bridge=br0
+Vagrantfile:
+
+    Vagrant is using ruby to abstract the interface away
+
+makefile vs. gulpfile.js
+
+    gulp is using nodejs and JavaScript to make the build process more understanadble
+
+html, js, and .jsx
+    
+    React is cramming html into .jsx to make a unique technology more accessable.
+    
+Something to be said about learning, tooling, and adoption
+    Bring aproachable interfaces,
+    for needed technologies,
+    to the people that need to use them.
+    
+Questions?
+    with info slide from intro.
+    
+Thanks
+    with info slide.
