@@ -14,10 +14,12 @@ var Sections = ['intro', 'git', 'vagrant', 'nodejs', 'sass', 'react', 'conclusio
 
 var Control = React.createClass({
   onclick: function() {
-    // when a product is clicked on, we publish a message on the topic 'products' and we pass the product name
+    // when a product is clicked on, we publish a message on the topic 'products' and we pass the presentation text
     PubSub.publish('presentationChange', this.props.text);
     // console.log("published " + this.props.text);
     this.setState({ currentPres: this.props.text});
+    var iframe = document.getElementsByTagName('iframe');
+    iframe[0].focus();
   },
   render: function(){
     return(

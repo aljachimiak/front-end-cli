@@ -18,12 +18,6 @@ gulp.task('sass', function() {
     }))
     .pipe(gulp.dest('css'));
 });
-
-// var browserify = require("browserify");
-// browserify("./script.js")
-//   .transform("babelify", {presets: ["es2015", "react"]})
-//   .bundle()
-//   .pipe(fs.createWriteStream("bundle.js"));
  
 var fs = require('fs'); 
 gulp.task('react', function() {

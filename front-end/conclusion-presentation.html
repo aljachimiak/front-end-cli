@@ -71,6 +71,244 @@
 			<div class="slides">
 				
 				<section>
+					<h2>Conclusion</h2>
+				</section>
+				
+				<section>
+					<h2>My Takeaways</h2>
+					<ol>
+						<li class="fragment">All of the processes shown here are pretty well documented with moderate googling.</li>
+						<li class="fragment">Automation will set you free.</li>
+						<li class="fragment">Something to be said about learning, tooling, and adoption.</li>
+					</ol>
+				</section>
+				
+				<section>
+					<h2>1 - Well Documented</h2>
+					<ul>
+						<li class="fragment">Many developers are using these tools.</li>
+						<li class="fragment">Using a familliar (JavaScript) interface helps.</li>
+						<li class="fragment">Many projects are connecting the tools for you.</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>2 - Automation Will Set You Free</h2>
+					<ul>
+						<li class="fragment">Learning the low level flow of tasks is applicable in other areas.</li>
+						<li class="fragment">Investing the time in automation now, pays dividends in the future</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>3 - Interesting Patterns</h2>
+					<p class="fragment">Language creep in tooling</p>
+				</section>
+					
+				<section>
+					<p>Language creep in tooling</p>
+					<p>Virtualization: <code>kvm vs. vagrant</code></p>
+					<pre class='fragment'>
+						<code class="bash">vmbuilder kvm ubuntu --suite=intrepid --flavour=virtual --arch=amd64 --mirror=http://192.168.0.100:9999/ubuntu -o --libvirt=qemu:///system --tmpfs=- --ip=192.168.0.101 --part=vmbuilder.partition --templates=mytemplates --user=administrator --name=Administrator --pass=HerpDerp --addpkg=vim-nox --addpkg=unattended-upgrades --addpkg=acpid --firstboot=boot.sh --mem=256 --hostname=vm1 --bridge=br0
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<p>Language creep in tooling</p>
+					<p>Virtualization: <code>kvm vs. vagrant</code></p>
+					<pre class='fragment'>
+						<code class="ruby"># Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "ubuntu/trusty64"
+
+  # add a bit more memory
+  config.vm.provider "virtualbox" do |v|
+     v.customize ["modifyvm", :id, "--memory", "2048"]
+  end
+
+  # use this config script on initial 'up' or --provision
+  config.vm.provision "shell", path: "./scripts/setup.sh"
+  
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+end
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<p>Language creep in tooling</p>
+					<p>Build Process: <code>makefile vs. gulpfile.js</code></p>
+					<pre class='fragment'>
+						<code class="bash">SASS_SRC := assets/css
+JS_SRC   := assets/js
+CSS_DIR  := htdocs/css
+JS_DIR   := htdocs/js
+BIN      := node_modules/bin
+
+$(CSS_DIR)/%.css: $(SASS_SRC)/%.scss $(SASS_SRC)/_settings.scss
+    @echo Compiling $@
+    @mkdir -p $(@D)
+    @sassc -t compressed -o $@ $<
+    @$(BIN)/autoprefixer $@
+
+$(JS_DIR)/%.js: $(JS_SRC)/%.js
+    @echo Processing $@
+    @mkdir -p $(@D)
+    @$(BIN)/jsmin --level 2 --output $@ $?
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<p>Language creep in tooling</p>
+					<p>Build Process: <code>makefile vs. gulpfile.js</code></p>
+					<pre class='fragment'>
+						<code class="js">var gulp = require('gulp');
+var $    = require('gulp-load-plugins')();
+var browserify = require('browserify');
+
+var sassPaths = [
+  'bower_components/foundation-sites/scss',
+  'bower_components/motion-ui/src'
+];
+
+gulp.task('sass', function() {
+  return gulp.src('scss/app.scss')
+    .pipe($.sass({
+      includePaths: sassPaths
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: ['last 2 versions', 'ie >= 9']
+    }))
+    .pipe(gulp.dest('css'));
+});
+ 
+var fs = require('fs'); 
+gulp.task('react', function() {
+  //console.log('reacting');
+  browserify("./main.jsx")
+    .transform("babelify")
+    .bundle()
+    .pipe(fs.createWriteStream('./bundle.js'))
+  
+})
+
+gulp.task('default', ['sass'], function() {
+  gulp.watch(['scss/**/*.scss'], ['sass']);
+  gulp.watch(['./**/*.jsx'], ['react']);
+});
+						</code>
+					</pre>
+				</section>
+				
+				<section>
+					<p>Language creep in tooling</p>
+					<p>React: <code>Put some html in your Javascript...</code></p>
+					<pre class='fragment'>
+						<code class="jsx">var Control = React.createClass({
+  onclick: function() {
+    PubSub.publish('presentationChange', this.props.text);
+    this.setState({ currentPres: this.props.text});
+  },
+  render: function(){
+    return(
+        <li className={this.props.selected} id={this.props.text + "_item"}>
+          <a className={this.props.selected} href="#" onClick={this.onclick} data-toggle="my-info" id={this.props.text}>{this.props.text}</a>
+        </li>
+    )
+  }
+});
+
+var ControlList = React.createClass({
+  getInitialState: function() {
+    return ({ currentPres: "intro" });
+  },
+  componentWillMount: function() {
+    this.pubsub_token = PubSub.subscribe('presentationChange', function(topic, pres) {
+      this.setState({ currentPres: pres });
+    }.bind(this));
+  },
+  render: function(){
+    var state = this.state  
+    var controls = this.props.data.map(function(control, index){
+      var currentClass = state.currentPres == control ? "selected" : "";
+      console.log("change 3");
+      return(
+          <Control key={index} text={control} selected={currentClass}></Control>
+      )
+    });
+    return(    
+        <ul id="topic-selection">
+          {controls}
+        </ul>
+    )
+  }
+});
+						</code>
+					</pre>
+				</section>
+					
+				<section>
+					<h2>3 - Something to be said about learning, tooling, and adoption</h2>
+					<ul>
+						<li class="fragment">Bring aproachable interfaces</li>
+						<li class="fragment">for needed technologies,</li>
+						<li class="fragment">to the people that need to use them.</li>
+					</ul>
+				</section>
+				
+				<section>
+					<style>
+						section dt, section dd {
+							text-align: left !important;
+						}
+						section dd {
+							margin-left: 2em;
+						}
+					</style>
+					<h2>Any Questions?</h2>
+					<div style="font-size:.8em;">
+						<dt>Twitter:</dt>
+						<dd>@aljachimiak</dd>
+						<br>
+						<dt>Visit this talk:</dt>
+						<dd><a href="https://aljachimiak.github.com/front-end-cli/">https://aljachimiak.github.com/front-end-cli/</a></dd>
+						<br>
+						<dt>Code for this talk:</dt>
+						<dd><a href="https://github.com/aljachimiak/front-end-cli/">https://github.com/aljachimiak/front-end-cli/</a></dd>
+					</div style="font-size:.8em;">	
+				</section>
+				
+				<section>
+					<style>
+						section dt, section dd {
+							text-align: left !important;
+						}
+						section dd {
+							margin-left: 2em;
+						}
+					</style>
+					<h2>Thanks!</h2>
+					<div style="">
+						<dt>Twitter:</dt>
+						<dd>@aljachimiak</dd>
+						<br>
+						<dt>Visit this talk:</dt>
+						<dd><a href="https://aljachimiak.github.com/front-end-cli/">https://aljachimiak.github.com/front-end-cli/</a></dd>
+						<br>
+						<dt>Code for this talk:</dt>
+						<dd><a href="https://github.com/aljachimiak/front-end-cli/">https://github.com/aljachimiak/front-end-cli/</a></dd>
+					</div style="font-size:.8em;">	
+				</section>
+				<!-- demo slides -->
+				<section>
 					<h1>Reveal.js</h1>
 					<h3>The HTML Presentation Framework</h3>
 					<p>
