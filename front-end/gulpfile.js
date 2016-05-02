@@ -21,15 +21,13 @@ gulp.task('sass', function() {
  
 var fs = require('fs'); 
 gulp.task('react', function() {
-  //console.log('reacting');
   browserify("./main.jsx")
     .transform("babelify")
     .bundle()
-    .pipe(fs.createWriteStream('./bundle.js'))
-  
+    .pipe(fs.createWriteStream('./bundle.js'));
 })
 
-gulp.task('default', ['sass'], function() {
+gulp.task('default', ['sass', 'react'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
   gulp.watch(['./**/*.jsx'], ['react']);
 });
