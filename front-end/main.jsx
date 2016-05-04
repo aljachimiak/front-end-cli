@@ -43,7 +43,7 @@ var ControlList = React.createClass({
     var state = this.state  
     var controls = this.props.data.map(function(control, index){
       var currentClass = state.currentPres == control ? "selected" : "";
-      console.log("change 3");
+      console.log("change 4");
       return(
           <Control key={index} text={control} selected={currentClass}></Control>
       )

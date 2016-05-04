@@ -81,6 +81,7 @@ symlink_node_to_nodejs () {
 ## here, there be dragons
 install_node () {
   print_section "Installing Node.js"
+  ## this is the reccomended way: https://nodejs.org/en/download/package-manager/
   curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - || fail \
     "Unable to run scary nodejs installation script"
   sudo apt-get install nodejs -y || fail "Unable to install Node.js."
