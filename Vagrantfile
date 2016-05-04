@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 8080, host: 8081
+  # config.vm.network "forwarded_port", guest: 8080, host: 8081
 
   # nfs for ember file watching
   # config.vm.network "private_network", ip: "192.168.33.11"

@@ -19,6 +19,7 @@ main () {
   restart_services
   install_foundation_cli
   install_gulp
+  install_bower
   install_browserify
 }
 
@@ -115,6 +116,11 @@ install_foundation_cli () {
 install_gulp () {
   print_section "Installing Gulp"
   sudo npm install -g gulp || fail "Unable to install gulp"
+}
+
+install_bower () {
+  print_section "Installing Bower"
+  sudo npm install -g bower || fail "Unable to install bower"
 }
 
 install_browserify () {
