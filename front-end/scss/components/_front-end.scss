@@ -13,7 +13,7 @@ $secret-message-color : #def0fc;
 // secret message
 .secret-message {
     @extend .primary;
-    color: set-text-color($secret-message-color);
+    color: $secret-message-color;
 }
 
 /*
